@@ -22,7 +22,7 @@ function Hello(name) {
   return <h1> "안녕하세요 " {props.name}님!</h1>;
 }
 
-function Num(props) {
+function Sum(props) {
   //숫자 덧셈 계산
   //parseInt, parseFloat, Number(value)
   const sum = parseInt(props.num1) + parseInt(props.num2);
@@ -31,25 +31,39 @@ function Num(props) {
     <>
       <h1>첫번째 숫자는 {props.num1}입니다.</h1>
       <h1>두번째 숫자는 {props.num2}입니다.</h1>
+      <h1>두 숫자의 합은 {sum}입니다.</h1>
     </>
   );
 }
 
-function Drink(props) {
-  return (
-    <div>
-      {props.name} - {props.price}원
-    </div>
-  );
+function Drink({ name, price }) {
+  return <p>{price}원</p>;
 }
-function DrinkMachine() {
+
+function DrinkMachine(props) {
+  let selectedDrink;
+
+  if (props.price === 1000) {
+    selectedDrink = "콜라";
+  } else if (props.price === 2000) {
+    selectedDrink = "사이다";
+  } else {
+    selectedDrink = "물";
+  }
+
   return (
-    <div>
-      <Drink name="콜라" price={1000} />
-      <Drink name="사이다" price={2000} />
-      <Drink name="물" price={500} />
-    </div>
+    <>
+      <h1>{`받은 금액: ${props.price}원`}</h1>
+      <h1>{`선택된 음료: ${drink}`}</h1>
+    </>
   );
 }
 
 export default DrinkMachine;
+
+
+
+
+
+
+
