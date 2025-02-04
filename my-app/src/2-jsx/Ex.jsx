@@ -17,7 +17,7 @@
 // 2. 1000원: "콜라"
 // 3. 2000원: "사이다"
 // 4. 그 외 금액: "물"
-
+//
 function Hello(name) {
   return <h1> "안녕하세요 " {props.name}님!</h1>;
 }
@@ -60,10 +60,3 @@ function DrinkMachine(props) {
 }
 
 export default DrinkMachine;
-
-
-
-
-
-
-
